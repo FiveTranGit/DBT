@@ -6,4 +6,4 @@ SELECT
     XMLGET(s.value, 'Transaction_Amount'):"$" :: float AS "Transaction_Amount",
     XMLGET(s.value, 'Transaction_Mode'):"$" :: string AS "Transaction_Mode"
 FROM ELT.S3SRCTRG.TRANSACTIONDATA,
-LATERAL FLATTEN(input => TO_ARRAY(ELT.S3SRCTRG.TRANSACTIONDATA._DATA:"$")) s;
+LATERAL FLATTEN(input => TO_ARRAY(ELT.S3SRCTRG.TRANSACTIONDATA._DATA:"$")) s
